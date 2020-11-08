@@ -345,7 +345,7 @@ nav>#menu>ul,nav>#h_menu>ul{
     position: fixed;
     line-height: 50px;
     color: #fff;
-
+    display: none;
     text-align: center;
     right: 10px;
     bottom: 100px;
