@@ -1,0 +1,393 @@
+/*
+==========================
+
+
+作者: Tommy Lam
+描述: 
+    index.html頁面的配置文件
+
+
+==========================
+*/
+
+/* 導入外部CSS */
+@import "anim.css";
+/* 基本設定 */
+*{
+    margin: 0;
+    padding: 0;
+    font-family: 'Lato', sans-serif;
+}
+
+html,body{
+    scroll-behavior: smooth;
+}
+
+.scrollbar{
+    overflow-y: scroll;
+    scroll-behavior: smooth;
+}
+
+::-webkit-scrollbar{
+    width: 1px;
+}
+
+::-webkit-scrollbar-track{
+    border-radius: 0;
+}
+
+#rejection{
+    display: none;   
+}
+
+ul{
+    list-style: none;
+}
+
+a{
+    text-decoration: none;
+    color: black;
+}
+
+/* 導航欄 */
+
+nav{
+    width: 90%;
+    margin: 0 auto;
+    padding-top: 4em;
+    display: flex;
+    align-items: center;
+    color: white;
+    animation: a_nav 3s;
+}
+
+nav>#icon,nav>#h_icon{
+    font-size: 4em;
+    font-weight: bold;
+    color: #02fee5;
+}
+
+nav>#menu,nav>#h_menu{
+    width: 80%;
+}
+
+nav>#menu>ul,nav>#h_menu>ul{
+    display: flex;
+    align-items: center;
+    margin-left: 3em;
+}
+
+#menu li,#h_menu li{
+    display: inline-block;
+    width: 4em;
+    padding: 0.8em;
+    text-align: center;
+    border-radius: 30px;
+    margin-right: 1.5em;
+
+}
+#menu li>a,#h_menu li>a{
+    color: #fff;
+}
+#menu li:hover,#h_menu li:hover{
+    transition: 1s;
+    background-color: #61D2B4;
+}
+
+/* Background設定 */
+#background{
+    width: 100%;
+    height: 100%;
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    background-image: url("../img/banner1.png");
+}
+
+#title{
+    color: #fff;
+    width: 90%;
+    margin: 0 auto;
+    margin-top: 10em;
+    animation: a_title 2s;
+}
+
+#title>h1{
+    font-size: 3em;
+}
+#title>#button{
+    margin-top: 6em;
+    padding: 1em 4em;
+    border: 3px solid #fff;
+    width: auto;
+    display: inline-block;
+    color: #fff;
+}
+
+#title>#button:hover{
+    background: rgba(255, 255, 255, 1);
+    color: #263048;
+    border: 3px solid #263048;
+}
+
+#slide_tips{
+    position: absolute;
+    width: 40px;
+    height: 50px;
+    left: 50%;
+    bottom: 0;
+}
+#slide_tips>i{
+    display: block;
+    border: 1px solid silver;
+    height: 30px;
+    width: 0;
+    margin: 0 auto;
+    margin-bottom: 2em;
+    animation: a_slide_tips 2s infinite;
+}
+#slide_tips>span{
+    color: #fff;
+}
+
+/* 課程介紹 */
+#ALL{
+    width: 90%;
+    margin: 0 auto; 
+    margin-top: 6em;
+}
+
+#course{
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    flex-direction: column;
+}
+
+#course_title{
+    line-height: 4em;
+    margin-bottom: 6em;
+}
+
+#course_title>h2{
+    font-family: 'Righteous', cursive;
+    margin-bottom: 2em;
+}
+@media screen and (min-width: 1000px) {
+    #courses{
+        display: flex;
+        justify-content: center;
+        gap: 2em;
+        margin-bottom: 4em;
+    }
+    .card{
+        width: 30%;
+    }
+}
+@media screen and (min-width: 1440px) {
+    #courses{
+        display: flex;
+        justify-content: center;
+        gap: 6em;
+        margin-bottom: 4em;
+    }
+    .card{
+        width: 20%;
+    }
+}
+
+/* 課程介紹 —— 卡片樣式 */
+.card{
+    box-shadow: 0px 10px 60px 0px rgba(0, 0, 0, 0.4);
+    transition: 1s;
+}
+
+.card:hover{
+    transform: scale(1.1);
+}
+
+.card:hover{
+    cursor: pointer;
+}
+.card-img{
+    max-width: 100%;
+    max-height: 100%;
+}
+
+.card-body>h2{
+    margin: 1.5em 0;
+}
+
+.card-text>h4{
+    text-align: center;
+}
+
+.card-text{
+    margin-bottom: 2em;
+}
+
+/* 課程介紹 —— 詳情 */
+#courses_detail{
+    display: flex;
+    flex-direction: column;
+}
+
+.bigcard{
+    width: 50%;
+    margin: 0 auto;
+    box-shadow: 0px 10px 60px 0px rgba(0, 0, 0, 0.4);
+    text-align: start;
+    display: none;
+
+    margin-bottom: 4em;
+    padding: 2em;
+    transition: 1s;
+}
+
+@media screen and (min-width: 1000px) {
+    .bigcard{
+        width: 80%;
+    }
+}
+@media screen and (min-width: 1440px) {
+    .bigcard{
+        width: 50%;
+    }
+}
+.bigcard>*{
+    line-height: 2em;
+    list-style: none;
+}
+.bigcard>h2{
+    font-size: 2.5em;
+}
+.bigcard>h4{
+    font-size: 1.5em;
+}
+
+/* 人物介紹 —— 卡片樣式 */
+#intro,#other{
+    margin-top: 2em;
+    margin-bottom: 4em;
+}
+.intro_card{
+    width: 60%;
+    height: 50%;
+    box-shadow: 0px 10px 60px 0px rgba(0, 0, 0, 0.4);
+    margin: 0 auto;
+    display: flex;
+    padding: 0.1em;
+    border: 1px solid silver;
+}
+
+@media screen and (min-width: 1000px) {
+    .intro_card{
+        width: 80%;
+    }
+}
+@media screen and (min-width: 1440px) {
+    .intro_card{
+        width: 60%;
+    }
+}
+
+#intro_title,#other_title{
+    line-height: 4em;
+    margin-bottom: 4em;
+    text-align: center;
+}
+
+.intro_img{
+    max-width: 40%;
+}
+
+.intro_card img{
+    width: 100%;
+    max-width: 100%;
+    height: 100%;
+}
+
+.intro_text{
+    padding: 2em;
+}
+
+.intro_text>h2{
+    margin-bottom: 0.5em;
+}
+.intro_text>h3{
+    margin-bottom: 2em;
+}
+
+/* footer */
+#footer{
+    margin-top: 2em;
+    background-color: #263048;
+}
+
+#footer>p{
+    color: silver;
+    text-align: center;
+    line-height: 3em;
+}
+
+#footer>p>a{
+    color: silver;
+}
+
+#Top{
+    z-index: 1;
+    border-radius: 50%;
+    background-color: #263048;
+    width: 50px;
+    height: 50px;
+    position: fixed;
+    line-height: 50px;
+    color: #fff;
+
+    text-align: center;
+    right: 10px;
+    bottom: 100px;
+}
+#Top:hover{
+    cursor: pointer;
+}
+/* hidden-background */
+
+#hidden_background{
+    width: 100%;
+    background-color: #263048;
+    position: fixed;
+}
+
+#m_menu{
+    display: none;
+}
+
+#other>.intro_card{
+    max-height: 50%;
+}
+
+/* 表格樣式 */
+
+table{
+    width: 100%;
+    height: 100%;
+}
+
+table{
+    border: 1px solid #333;
+}
+
+thead,tfoot,td[colspan="4"] {
+    background-color: #333;
+    color: #fff;
+    font-weight: bold;
+}
+
+td[colspan="4"]{
+    padding: 2px;
+}
+
+td:nth-child(4){
+    text-align: center;
+}
+
