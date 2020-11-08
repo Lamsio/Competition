@@ -263,6 +263,9 @@ nav>#menu>ul,nav>#h_menu>ul{
 .bigcard>h4{
     font-size: 1.5em;
 }
+.bigcard>p>a{
+    color: rgb(177, 51, 177)
+}
 
 /* 人物介紹 —— 卡片樣式 */
 #intro,#other{
@@ -286,7 +289,7 @@ nav>#menu>ul,nav>#h_menu>ul{
 }
 @media screen and (min-width: 1440px) {
     .intro_card{
-        width: 60%;
+        width: 50%;
     }
 }
 
